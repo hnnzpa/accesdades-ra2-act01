@@ -14,7 +14,7 @@ public class StudentController {
         return "Get endpoint";
     }
 
-    @PostMapping("/students/batch")
+    @PostMapping("/student/batch")
     public String addStudent(){
         return "Post endpoint";
     }
