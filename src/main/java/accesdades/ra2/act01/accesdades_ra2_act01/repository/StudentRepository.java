@@ -39,8 +39,18 @@ public class StudentRepository {
     }
 
     public int save(){
-        String sql = "insert into students (nom, cognom, age, cicle, any_academic) values (?,?,?,?,?)";
-        int status = jdbcTemplate.update(sql, "Hanna", "Zipa", 18, "DAM", 2);
-        return status; 
+        int nStatus = 0; 
+        String[] noms = {"hanna", "maikel", "ian", "cha-li", "marc", "iker", "joan", "erika", "elsa", "janira"};
+        String[] cognoms = {"zipa", "alcantara", "limon", "jimenez", "lopez", "nuevo", "fernandez", "hermosilla", "jimenez", "lopez"};
+        int[] edats = {18, 18, 19, 20, 22, 25, 21, 20, 19, 20};
+        String[] cicles = {"DAM", "DAW", "DAW", "ASIX", "DAM", "ASIX", "DAW", "DAM", "ASIX", "DAW"}; 
+        int[] anys = {1, 1, 2, 1, 2, 2, 1, 2, 1, 2};
+        for (int i = 0; i < 10; i++) {
+            String sql = "insert into students (nom, cognom, age, cicle, any_academic) values (?,?,?,?,?)";
+            int status = jdbcTemplate.update(sql, noms[i], cognoms[i], edats[i], cicles[i], anys[i]); 
+            nStatus += status;
+        }
+        
+        return nStatus; 
     }
 }
