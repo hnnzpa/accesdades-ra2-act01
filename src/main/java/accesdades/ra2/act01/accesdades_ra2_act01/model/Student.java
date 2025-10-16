@@ -9,13 +9,15 @@ public class Student {
     private String cicle; 
     private int any_academic;
 
-    public Student(Long id, String nom, String cognom, int age, String cicle, int any) {
+    public Student(){}
+    
+    public Student(Long id, String nom, String cognom, int age, String cicle, int any_academic) {
         this.id = id;
         this.nom = nom;
         this.cognom = cognom;
         this.age = age;
         this.cicle = cicle;
-        this.any = any;
+        this.any_academic = any_academic;
     }
     public Long getId() {
         return id;
